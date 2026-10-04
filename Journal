@@ -1,0 +1,16 @@
+10/1 - Set up pfSense VM. 
+
+- Downloaded .iso from Internet Archive to avoid installer on pfSense’s website.
+- Name: pfSense-HomeSOC Lab Router
+- type: BSD
+- version: FreeBSD (64-bit)
+- 1GB RAM
+- 1 vCPU
+- Disk: 8GB
+- Network Adapters:
+    - Adapter 1 (WAN): Attached to NAT — this is pfSense's internet-facing side
+    - Adapter 2 (LAN): Attached to Internal Network
+        - Network name: soclabnet
+    - Both use the Intel PRO/1000 MT Desktop adapter type
+
+pfSense set up well, I needed to redo my virtual hard disk because it didn’t allocate correctly (It only had 1 GB of storage and pfSense said it didn’t recognize any drive). Once I redid it, pfSense set up smoothly with em0 = WAN and em1 = LAN
